@@ -1,3 +1,3 @@
-# static-starter
+# composition-challenge
 
-A starter template for building static sites.
+Compose a piece of music based on given elements.

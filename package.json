@@ -1,8 +1,8 @@
 {
-  "name": "static-starter",
+  "name": "composition-challenge",
   "private": true,
   "version": "1.0.0",
-  "description": "A starter template for building static sites.",
+  "description": "Compose a piece of music based on given elements.",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sccherry/static-starter.git"
+    "url": "git+https://github.com/sccherry/composition-challenge.git"
   },
   "keywords": [
     "eleventy"
@@ -26,9 +26,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sccherry/static-starter/issues"
+    "url": "https://github.com/sccherry/composition-challenge/issues"
   },
-  "homepage": "https://github.com/sccherry/static-starter#readme",
+  "homepage": "https://github.com/sccherry/composition-challenge#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-navigation": "^0.3.2",
