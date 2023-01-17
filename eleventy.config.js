@@ -1,4 +1,5 @@
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
+const eleventyRssPlugin = require('@11ty/eleventy-plugin-rss');
 const pkg = require('./package.json');
 
 module.exports = function (eleventyConfig) {
@@ -6,6 +7,7 @@ module.exports = function (eleventyConfig) {
     process.env.ELEVENTY_ENV === 'production' ? `/${pkg.name}/` : '/';
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(eleventyRssPlugin);
 
   eleventyConfig.addPassthroughCopy('./public');
 
