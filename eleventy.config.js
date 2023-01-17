@@ -11,6 +11,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('./public');
 
+  ['pick', 'unique'].forEach((filter) => {
+    eleventyConfig.addFilter(filter, require(`./lib/filters/${filter}`));
+  });
+
   return {
     pathPrefix,
     dataTemplateEngine: 'njk',
