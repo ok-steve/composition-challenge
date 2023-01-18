@@ -20,7 +20,7 @@ eleventyExcludeFromCollections: true
     <title>{{ item.data.title }}</title>
     <link href="{{ absolutePostUrl }}" />
     <updated>{{ item.date | dateToRfc3339 }}</updated>
-    <id>{{ absolutePostUrl }}</id>
+    <id>{{ absolutePostUrl }}{{ item.date.toISOString() | truncate(10, true, '') }}</id>
     <content xml:lang="en-US" type="html">{{ item.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
   </entry>
   {%- endfor %}
