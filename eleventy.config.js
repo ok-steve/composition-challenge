@@ -12,7 +12,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setServerPassthroughCopyBehavior('passthrough');
   eleventyConfig.addPassthroughCopy('./public');
 
-  ['pick', 'unique'].forEach((filter) => {
+  ['pick', 'random', 'unique'].forEach((filter) => {
     eleventyConfig.addFilter(filter, require(`./lib/filters/${filter}`));
   });
 
