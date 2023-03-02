@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sccherry/composition-challenge.git"
+    "url": "git+https://github.com/ok-steve/composition-challenge.git"
   },
   "keywords": [
     "eleventy"
@@ -26,9 +26,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sccherry/composition-challenge/issues"
+    "url": "https://github.com/ok-steve/composition-challenge/issues"
   },
-  "homepage": "https://github.com/sccherry/composition-challenge#readme",
+  "homepage": "https://github.com/ok-steve/composition-challenge#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-navigation": "^0.3.2",
