@@ -59,4 +59,11 @@ eleventyComputed:
 <dl>
   <dt>Form</dt>
   <dd>{{ form.form }}</dd>
+
+  {% set arrFeat = arrangementFeature | pick %}
+
+  {% if arrFeat %}
+    <dt>Arrangement feature</dt>
+    <dd>{{ arrFeat }}</dd>
+  {% endif %}
 </dl>
