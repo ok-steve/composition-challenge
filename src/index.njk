@@ -13,8 +13,6 @@ eleventyComputed:
 <h2>Melody</h2>
 
 <dl>
-  <dt>Form</dt>
-  <dd>{{ form.form }}</dd>
   <dt>Phrase structure</dt>
   <dd>
     <ol>
@@ -38,14 +36,14 @@ eleventyComputed:
 
 <dl>
   <dt>Tempo</dt>
-  <dd>{{ tempo | pick }} BPM</dd>
+  <dd>{{ tempo }} BPM</dd>
   <dt>Meter</dt>
   <dd>{{ meter.numerator | pick }}/{{ meter.denominator | pick }}</dd>
   <dt>Rhythmic feature</dt>
   <dd>{{ rhythmicFeature | pick }}</dd>
 </dl>
 
-<h2>Other</h2>
+<h2>Texture</h2>
 
 <dl>
   <dt>Texture</dt>
@@ -54,4 +52,11 @@ eleventyComputed:
   {% set emotion1 = emotions | pick %}
   {% set emotion2 = emotions | pick %}
   <dd>{{ [emotion1, emotion2] | unique | join(' + ')}}</dd>
+</dl>
+
+<h2>Arrangement</h2>
+
+<dl>
+  <dt>Form</dt>
+  <dd>{{ form.form }}</dd>
 </dl>
