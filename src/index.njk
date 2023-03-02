@@ -39,8 +39,13 @@ eleventyComputed:
   <dd>{{ tempo }} BPM</dd>
   <dt>Meter</dt>
   <dd>{{ meter.numerator | pick }}/{{ meter.denominator | pick }}</dd>
-  <dt>Rhythmic feature</dt>
-  <dd>{{ rhythmicFeature | pick }}</dd>
+
+  {% set rhyFeat = rhythmicFeature | pick %}
+
+  {% if rhyFeat %}
+    <dt>Rhythmic feature</dt>
+    <dd>{{ rhyFeat }}</dd>
+  {% endif %}
 </dl>
 
 <h2>Texture</h2>
