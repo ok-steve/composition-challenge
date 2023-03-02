@@ -4,11 +4,12 @@ const pkg = require('./package.json');
 
 module.exports = function (eleventyConfig) {
   const pathPrefix =
-    process.env.ELEVENTY_ENV === 'production' ? `/${pkg.name}/` : '/';
+    process.env.ELEVENTY_RUN_MODE === 'build' ? `/${pkg.name}/` : '/';
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(eleventyRssPlugin);
 
+  eleventyConfig.setServerPassthroughCopyBehavior('passthrough');
   eleventyConfig.addPassthroughCopy('./public');
 
   ['pick', 'unique'].forEach((filter) => {
@@ -17,7 +18,6 @@ module.exports = function (eleventyConfig) {
 
   return {
     pathPrefix,
-    dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     dir: {
