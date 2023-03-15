@@ -1,9 +1,11 @@
-const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
-const eleventyRssPlugin = require('@11ty/eleventy-plugin-rss');
+const { EleventyHtmlBasePlugin } = require('@11ty/eleventy');
+const EleventyNavigation = require('@11ty/eleventy-navigation');
+const EleventyRssPlugin = require('@11ty/eleventy-plugin-rss');
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);
-  eleventyConfig.addPlugin(eleventyRssPlugin);
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+  eleventyConfig.addPlugin(EleventyNavigation);
+  eleventyConfig.addPlugin(EleventyRssPlugin);
 
   eleventyConfig.setServerPassthroughCopyBehavior('passthrough');
   eleventyConfig.addPassthroughCopy('./public');
@@ -13,8 +15,6 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
-    htmlTemplateEngine: 'njk',
-    markdownTemplateEngine: 'njk',
     dir: {
       input: 'src',
       output: 'dist',

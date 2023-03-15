@@ -6,33 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>{{ title or site.name }} | {{ site.name }}</title>
-    <meta name="description" content="{{ site.description }}" />
+    <meta name="description" content="{{ pkg.description }}" />
 
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+    <link rel="canonical" href="{{ page.url | htmlBaseUrl(pkg.author.url) }}" />
+    <link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="/feed.xml">
 
     <link
       rel="stylesheet"
       href="https://stevecherry.net/normcore/css/normcore.css"
     />
-    <link rel="stylesheet" href="{{ '/public/style.css' | url }}" />
+    <link rel="stylesheet" href="/public/style.css" />
 
     <script
       src="https://stevecherry.net/normcore/js/normcore.js"
       defer
     ></script>
-    <script src="{{ '/public/script.js' | url }}" defer></script>
+    <script src="/public/script.js" defer></script>
   </head>
   <body>
     <div class="container cover stack">
       <header role="banner">
-        <a href="{{ '/' | url }}">{{ site.name }}</a>
+        <a href="/">{{ site.name }}</a>
       </header>
 
       <nav role="navigation">
         <ul class="cluster" role="list">
           {% for entry in collections.all | eleventyNavigation %}
             <li>
-              <a href="{{ entry.url | url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+              <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
             </li>
           {% endfor %}
         </ul>
@@ -44,8 +45,9 @@
         {{ content | safe }}
       </main>
 
-      <footer role="contentinfo">
-        <p>{{ site.description }}</p>
+      <footer class="stack" role="contentinfo">
+        <p>{{ pkg.description }}</p>
+        <p>Yet <a href="{{ pkg.homepage }}">another project</a> by <a href="{{ pkg.author.url }}">{{ pkg.author.name }}</a>.</p>
       </footer>
     </div>
   </body>
