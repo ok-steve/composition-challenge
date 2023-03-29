@@ -1,6 +1,6 @@
 const pkg = require('../../package.json');
 
-module.exports = () => {
+module.exports = function () {
   return {
     name: pkg.name
       .split('-')
