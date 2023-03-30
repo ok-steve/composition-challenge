@@ -3,17 +3,21 @@ const range = require('../../lib/range');
 const unique = require('../../lib/unique');
 
 module.exports = function () {
-  const alphabet = 'ABCD';
-  const size = pick(range({ min: 1, max: alphabet.length }));
+  const alphabet = 'ABCDE';
+  const maxSize = 8;
+  const size = pick(range({ min: 2, max: maxSize }).map((num, i, list) => [num, list.length - i]));
 
   const { form } = range({ max: size }).reduce(
     (data) => {
-      if (pick([true, false]) || data.form === '') {
+      // Add a new section
+      if ((pick([true, false]) || data.form === '') && data.index < alphabet.length) {
         return {
           form: `${data.form}${alphabet[data.index]}`,
           index: data.index + 1,
         };
-      } else {
+      }
+      // Repeat a previous section
+      else {
         return {
           ...data,
           form: `${data.form}${pick(unique(data.form.split('')))}`,
@@ -23,8 +27,5 @@ module.exports = function () {
     { form: '', index: 0 }
   );
 
-  return {
-    form,
-    phrase: ['Period', 'Sentence'],
-  };
+  return form;
 };

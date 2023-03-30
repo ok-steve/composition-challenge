@@ -10,19 +10,6 @@ eleventyComputed:
   date: "{{ today.toISOString() }}"
 ---
 
-<h2>Melody</h2>
-
-<dl>
-  <dt>Phrase structure</dt>
-  <dd>
-    <ol>
-      {% for phrase in form.form | list | unique %}
-        <li>{{ phrase }}: {{ form.phrase | pick }}</li>
-      {% endfor %}
-    </ol>
-  </dd>
-</dl>
-
 <h2>Harmony</h2>
 
 <dl>
@@ -48,6 +35,29 @@ eleventyComputed:
   {% endif %}
 </dl>
 
+<h2>Arrangement</h2>
+
+<dl>
+  <dt>Phrase structure</dt>
+  <dd>
+    <ol type="A">
+      {% for section in form | list | unique %}
+        <li>{{ phrase | pick }}</li>
+      {% endfor %}
+    </ol>
+  </dd>
+
+  <dt>Form</dt>
+  <dd>{{ form }}</dd>
+
+  {% set arrFeat = arrangementFeature | pick %}
+
+  {% if arrFeat %}
+    <dt>Arrangement feature</dt>
+    <dd>{{ arrFeat }}</dd>
+  {% endif %}
+</dl>
+
 <h2>Texture</h2>
 
 <dl>
@@ -57,18 +67,4 @@ eleventyComputed:
   {% set emotion1 = emotions | pick %}
   {% set emotion2 = emotions | pick %}
   <dd>{{ [emotion1, emotion2] | unique | join(' + ')}}</dd>
-</dl>
-
-<h2>Arrangement</h2>
-
-<dl>
-  <dt>Form</dt>
-  <dd>{{ form.form }}</dd>
-
-  {% set arrFeat = arrangementFeature | pick %}
-
-  {% if arrFeat %}
-    <dt>Arrangement feature</dt>
-    <dd>{{ arrFeat }}</dd>
-  {% endif %}
 </dl>
