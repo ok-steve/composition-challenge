@@ -1,13 +1,12 @@
 const pick = require('../../lib/pick');
+const range = require('../../lib/range');
 const unique = require('../../lib/unique');
 
 module.exports = function () {
   const alphabet = 'ABCD';
-  const size = pick(
-    Array.from(new Array(alphabet.length), (_, i) => i).filter((i) => i > 0)
-  );
+  const size = pick(range({ min: 1, max: alphabet.length }));
 
-  const { form } = Array.from(new Array(size)).reduce(
+  const { form } = range({ max: size }).reduce(
     (data) => {
       if (pick([true, false]) || data.form === '') {
         return {
