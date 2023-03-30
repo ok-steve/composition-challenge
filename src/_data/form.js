@@ -1,5 +1,5 @@
-const pick = require('../../lib/filters/pick');
-const unique = require('../../lib/filters/unique');
+const pick = require('../../lib/pick');
+const unique = require('../../lib/unique');
 
 module.exports = function () {
   const alphabet = 'ABCD';
