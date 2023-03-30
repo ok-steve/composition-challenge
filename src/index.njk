@@ -23,7 +23,7 @@ eleventyComputed:
 
 <dl>
   <dt>Tempo</dt>
-  <dd>{{ tempo }} BPM</dd>
+  <dd>{{ tempo | pick }} BPM</dd>
   <dt>Meter</dt>
   <dd>{{ meter.numerator | pick }}/{{ meter.denominator | pick }}</dd>
 
