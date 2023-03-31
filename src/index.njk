@@ -10,6 +10,13 @@ eleventyComputed:
   date: "{{ today.toISOString() }}"
 ---
 
+<h2>Melody</h2>
+
+<dl>
+  <dt>Melodic material</dt>
+  <dd>{{ melody | pick }}</dd>
+</dl>
+
 <h2>Harmony</h2>
 
 <dl>
