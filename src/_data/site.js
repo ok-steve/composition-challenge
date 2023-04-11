@@ -2,6 +2,8 @@ const pkg = require('../../package.json');
 
 module.exports = function () {
   return {
+    env:
+      process.env.ELEVENTY_RUN_MODE === 'build' ? 'production' : 'development',
     name: pkg.name
       .split('-')
       .map(
