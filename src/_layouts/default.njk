@@ -8,6 +8,11 @@
     <title>{{ title or site.name }} | {{ site.name }}</title>
     <meta name="description" content="{{ pkg.description }}" />
 
+    <link rel="icon" href="/public/img/favicon.ico" size="any" />
+    <link rel="icon" href="/public/img/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/public/img/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest">
+
     <link rel="canonical" href="{{ page.url | htmlBaseUrl(pkg.author.url) }}" />
     <link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="/feed.xml">
 
