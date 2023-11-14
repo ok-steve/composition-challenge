@@ -45,15 +45,6 @@ eleventyComputed:
 <h2>Arrangement</h2>
 
 <dl>
-  <dt>Phrase structure</dt>
-  <dd>
-    <ol type="A">
-      {% for section in form | list | unique %}
-        <li>{{ phrase | pick }}</li>
-      {% endfor %}
-    </ol>
-  </dd>
-
   <dt>Form</dt>
   <dd>{{ form }}</dd>
 
