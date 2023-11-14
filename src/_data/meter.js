@@ -5,6 +5,6 @@ module.exports = function () {
       num,
       list.length - i,
     ]),
-    denominator: [4, 8, 2, 16].map((num, i, list) => [num, list.length - i]),
+    denominator: [4, 8, 2].map((num, i, list) => [num, list.length - i]),
   };
 };
