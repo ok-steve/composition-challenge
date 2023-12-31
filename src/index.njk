@@ -10,25 +10,20 @@ eleventyComputed:
   date: "{{ today.toISOString() }}"
 ---
 
-<h2>Melody</h2>
-
 <dl>
+  {# Melody #}
   <dt>Melodic material</dt>
   <dd>{{ melody | pick }}</dd>
-</dl>
 
-<h2>Harmony</h2>
+  {# Harmony #}
 
-<dl>
   <dt>Scale</dt>
   <dd>{{ scale | pick }}</dd>
   <dt>Harmonic language</dt>
   <dd>{{ harmonicLanguage | pick }}</dd>
-</dl>
 
-<h2>Rhythm</h2>
+  {# Rhythm #}
 
-<dl>
   <dt>Tempo</dt>
   <dd>{{ tempo | pick }} BPM</dd>
   <dt>Meter</dt>
@@ -40,11 +35,10 @@ eleventyComputed:
     <dt>Rhythmic feature</dt>
     <dd>{{ rhyFeat }}</dd>
   {% endif %}
-</dl>
 
-<h2>Arrangement</h2>
 
-<dl>
+  {# Arrangement #}
+
   <dt>Form</dt>
   <dd>{{ form }}</dd>
 
@@ -54,11 +48,9 @@ eleventyComputed:
     <dt>Arrangement feature</dt>
     <dd>{{ arrFeat }}</dd>
   {% endif %}
-</dl>
 
-<h2>Texture</h2>
+  {# Texture #}
 
-<dl>
   <dt>Texture</dt>
   <dd>{{ textures | pick }}</dd>
   {#
