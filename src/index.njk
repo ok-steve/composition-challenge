@@ -39,10 +39,4 @@ eleventyComputed:
 
   <dt>Texture</dt>
   <dd>{{ textures | pick }}</dd>
-  {#
-  <dt>Emotion</dt>
-  {% set emotion1 = emotions | pick %}
-  {% set emotion2 = emotions | pick %}
-  <dd>{{ [emotion1, emotion2] | unique | join(' + ')}}</dd>
-  #}
 </dl>
