@@ -11,33 +11,22 @@ eleventyComputed:
 ---
 
 <dl>
-  {# Melody #}
-  <dt>Melodic material</dt>
+  <dt>Melody</dt>
   <dd>{{ melody | pick }}</dd>
 
-  {# Harmony #}
-
-  <dt>Scale</dt>
+  <dt>Harmony</dt>
   <dd>{{ scale | pick }}</dd>
-  <dt>Harmonic language</dt>
   <dd>{{ harmonicLanguage | pick }}</dd>
 
-  {# Rhythm #}
-
-  <dt>Tempo</dt>
+  <dt>Rhythm</dt>
   <dd>{{ tempo | pick }} BPM</dd>
-  <dt>Meter</dt>
   <dd>{{ meter.numerator | pick }}/{{ meter.denominator | pick }}</dd>
 
   {% set rhyFeat = rhythmicFeature | pick %}
 
   {% if rhyFeat %}
-    <dt>Rhythmic feature</dt>
     <dd>{{ rhyFeat }}</dd>
   {% endif %}
-
-
-  {# Arrangement #}
 
   <dt>Form</dt>
   <dd>{{ form }}</dd>
@@ -45,11 +34,8 @@ eleventyComputed:
   {% set arrFeat = arrangementFeature | pick %}
 
   {% if arrFeat %}
-    <dt>Arrangement feature</dt>
     <dd>{{ arrFeat }}</dd>
   {% endif %}
-
-  {# Texture #}
 
   <dt>Texture</dt>
   <dd>{{ textures | pick }}</dd>
