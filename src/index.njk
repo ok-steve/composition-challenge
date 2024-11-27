@@ -2,9 +2,6 @@
 layout: base
 tags:
   - challenge
-eleventyNavigation:
-  key: Home
-  order: -1
 eleventyComputed:
   title: "{{ today.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) }}"
   date: "{{ today.toISOString() }}"

@@ -60,15 +60,6 @@ html {
  * Grouping
  */
 
-/**
- * Only remove list styles with appropriate accessibility attributes.
- */
-
-ul[role="list"] {
-  padding: 0;
-  list-style: none;
-}
-
 dl {
   display: grid;
   grid-template-columns: max-content auto;
@@ -87,16 +78,6 @@ dd {
 /* ---------------------------------- *\
    #COMPOSITION
 \* ---------------------------------- */
-
-/**
- * Cluster
- */
-
-.cluster {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
 
 /**
  * Container
