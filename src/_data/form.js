@@ -1,16 +1,24 @@
-const pick = require('../../lib/pick');
-const range = require('../../lib/range');
-const unique = require('../../lib/unique');
+import pick from "../../lib/filters/pick.js";
+import range from "../../lib/utils/range.js";
+import unique from "../../lib/filters/unique.js";
 
-module.exports = function () {
-  const alphabet = 'ABCDE';
+export default function () {
+  const alphabet = "ABCDE";
   const maxSize = 8;
-  const size = pick(range({ min: 2, max: maxSize }).map((num, i, list) => [num, list.length - i]));
+  const size = pick(
+    range({ min: 2, max: maxSize }).map((num, i, list) => [
+      num,
+      list.length - i,
+    ])
+  );
 
   const { form } = range({ max: size }).reduce(
     (data) => {
       // Add a new section
-      if ((pick([true, false]) || data.form === '') && data.index < alphabet.length) {
+      if (
+        (pick([true, false]) || data.form === "") &&
+        data.index < alphabet.length
+      ) {
         return {
           form: `${data.form}${alphabet[data.index]}`,
           index: data.index + 1,
@@ -20,12 +28,12 @@ module.exports = function () {
       else {
         return {
           ...data,
-          form: `${data.form}${pick(unique(data.form.split('')))}`,
+          form: `${data.form}${pick(unique(data.form.split("")))}`,
         };
       }
     },
-    { form: '', index: 0 }
+    { form: "", index: 0 }
   );
 
   return form;
-};
+}

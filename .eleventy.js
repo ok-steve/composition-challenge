@@ -1,24 +1,24 @@
-const { EleventyHtmlBasePlugin } = require('@11ty/eleventy');
-const EleventyNavigation = require('@11ty/eleventy-navigation');
-const EleventyRssPlugin = require('@11ty/eleventy-plugin-rss');
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import EleventyNavigation from "@11ty/eleventy-navigation";
+import EleventyRssPlugin from "@11ty/eleventy-plugin-rss";
 
-module.exports = function (eleventyConfig) {
+import filters from "./lib/filters/index.js";
+
+export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(EleventyNavigation);
   eleventyConfig.addPlugin(EleventyRssPlugin);
 
-  eleventyConfig.setServerPassthroughCopyBehavior('passthrough');
-  eleventyConfig.addPassthroughCopy('./public');
+  eleventyConfig.addPlugin(filters);
 
-  ['pick', 'unique'].forEach((filter) =>
-    eleventyConfig.addFilter(filter, require(`./lib/${filter}`))
-  );
+  eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+  eleventyConfig.addPassthroughCopy("./public");
 
   return {
     dir: {
-      input: 'src',
-      output: 'dist',
-      layouts: '_layouts',
+      input: "src",
+      output: "dist",
+      layouts: "_layouts",
     },
   };
-};
+}

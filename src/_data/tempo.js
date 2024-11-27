@@ -1,6 +1,6 @@
-const range = require('../../lib/range');
+import range from "../../lib/utils/range.js";
 
-module.exports = function () {
+export default function () {
   // Weight the values by distance from center BPM
   const center = 120;
   const min = 40;
@@ -14,4 +14,4 @@ module.exports = function () {
     const clamp = Math.max(1, Math.min(100, scaled));
     return [bpm, clamp];
   });
-};
+}

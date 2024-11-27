@@ -1,14 +1,16 @@
 {
   "name": "composition-challenge",
   "private": true,
+  "type": "module",
   "version": "1.0.0",
   "description": "Compose a piece of music based on given elements.",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
     "build": "eleventy",
+    "preview": "eleventy --watch --incremental --ignore-initial",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build -- --serve --incremental --ignore-initial"
+    "start": "eleventy --serve --incremental --ignore-initial"
   },
   "repository": {
     "type": "git",
@@ -28,7 +30,7 @@
   },
   "homepage": "https://github.com/ok-steve/composition-challenge#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-navigation": "^0.3.2",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "rimraf": "^3.0.2"
