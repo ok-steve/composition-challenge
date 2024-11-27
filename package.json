@@ -8,9 +8,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "eleventy",
-    "preview": "eleventy --watch --incremental --ignore-initial",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "eleventy --serve --incremental --ignore-initial"
+    "start": "eleventy --serve"
   },
   "repository": {
     "type": "git",
