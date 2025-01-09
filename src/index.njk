@@ -10,14 +10,14 @@ eleventyComputed:
 <dl>
   <dt>Melody</dt>
   <dd>
-    {% set scale = scale|pick %}
+    {% set scale = scales | pick %}
     {{ scale.name }} scale
     {% if scale.description %}
       <br>{{ scale.description }}
     {% endif %}
   </dd>
   <dd>
-    {% set melody = melody|pick %}
+    {% set melody = melodies | pick %}
     {{ melody.name }}
     {% if melody.description %}
       <br>{{ melody.description }}
@@ -26,7 +26,7 @@ eleventyComputed:
 
   <dt>Harmony</dt>
   <dd>
-    {% set harmony =  harmonicLanguage | pick %}
+    {% set harmony =  harmonies | pick %}
     {{ harmony.name }}
     {% if harmony.description %}
       <br>{{ harmony.description }}
@@ -37,7 +37,7 @@ eleventyComputed:
   <dd>{{ tempo | pick }} BPM</dd>
   <dd>{{ meter.numerator | pick }}/{{ meter.denominator | pick }}</dd>
 
-  {% set rhythm = rhythmicFeature | pick %}
+  {% set rhythm = rhythms | pick %}
 
   {% if rhythm.name %}
     <dd>
@@ -51,7 +51,7 @@ eleventyComputed:
   <dt>Form</dt>
   <dd>{{ form }}</dd>
 
-  {% set arrangement = arrangementFeature | pick %}
+  {% set arrangement = arrangements | pick %}
 
   {% if arrangement.name %}
     <dd>
@@ -64,7 +64,7 @@ eleventyComputed:
 
   {# <dt>Texture</dt>
   <dd>
-    {% set texture = textures|pick %}
+    {% set texture = textures | pick %}
     {{ texture.name }}
     {% if texture.description %}
       <br>{{ texture.description }}

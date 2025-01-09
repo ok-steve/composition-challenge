@@ -1,0 +1,10 @@
+[
+  { "name": "Tonal/Functional" },
+  {
+    "name": "Linear chromatic",
+    "description": "Create chord progressions by focusing on the melody of each individual voice."
+  },
+  { "name": "Negative harmony" },
+  { "name": "Plateau modal", "description": "Long stretches of 1 chord." },
+  { "name": "Pop", "description": "Utilize 4 chord loops and plagal cadences." }
+]
