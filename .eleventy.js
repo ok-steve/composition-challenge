@@ -1,11 +1,25 @@
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
-import EleventyRssPlugin from "@11ty/eleventy-plugin-rss";
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 
 import filters from "./lib/filters/index.js";
 
 export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-  eleventyConfig.addPlugin(EleventyRssPlugin);
+  eleventyConfig.addPlugin(feedPlugin, {
+    collection: {
+      name: "challenge",
+      limit: 1,
+    },
+    metadata: {
+      language: "en",
+      title: "Composition Challenge",
+      subtitle: "Compose a piece of music based on given elements.",
+      base: "https://stevecherry.net/composition-challenge/",
+      author: {
+        name: "Steve Cherry",
+      },
+    },
+  });
 
   eleventyConfig.addPlugin(filters);
 

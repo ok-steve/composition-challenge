@@ -30,7 +30,7 @@
   "homepage": "https://github.com/ok-steve/composition-challenge#readme",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
     "rimraf": "^3.0.2"
   }
 }
