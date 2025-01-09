@@ -1,1 +1,7 @@
-["Tonal functional", "Linear chromatic", "Negative harmony", "Plateau modal", "Pop"]
+[
+  { "name": "Tonal/Functional" },
+  { "name": "Linear chromatic" },
+  { "name": "Negative harmony" },
+  { "name": "Plateau modal" },
+  { "name": "Pop" }
+]

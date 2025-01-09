@@ -1,12 +1,11 @@
 [
-  "Pentatonics",
-  "Triad pairs",
-  "Tone row",
-  "Melodic cell/motives",
-  "Guide tones",
-  "Isomelody",
-  "Augmentation/diminution",
-  "Inversion",
-  "Period structure",
-  "Sentence structure"
+  { "name": "Triad pairs" },
+  { "name": "Tone row" },
+  { "name": "Melodic cell/motives" },
+  { "name": "Guide tones" },
+  { "name": "Isomelody" },
+  { "name": "Augmentation/diminution" },
+  { "name": "Inversion" },
+  { "name": "Period structure" },
+  { "name": "Sentence structure" }
 ]

@@ -1,1 +1,6 @@
-["", "Key change", "Tempo change", "Meter change", "Ostinato"]
+[
+  { "name": "" },
+  { "name": "Key change" },
+  { "name": "Tempo change" },
+  { "name": "Meter change" }
+]

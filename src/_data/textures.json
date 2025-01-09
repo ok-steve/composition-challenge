@@ -1,11 +1,11 @@
 [
-  "Monophonic",
-  "Chordal",
-  "Polyphonic",
-  "Heterophonic",
-  "Onomatopoeic",
-  "Polythematic",
-  "Polyrhythmic",
-  "Homophonic",
-  "Hybrid"
+  { "name": "Monophonic" },
+  { "name": "Chordal" },
+  { "name": "Polyphonic" },
+  { "name": "Heterophonic" },
+  { "name": "Onomatopoeic" },
+  { "name": "Polythematic" },
+  { "name": "Polyrhythmic" },
+  { "name": "Homophonic" },
+  { "name": "Hybrid" }
 ]

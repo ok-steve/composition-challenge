@@ -1,1 +1,6 @@
-["", "Odd phrase lengths", "Euclidean rhythms", "Additive rhythms"]
+[
+  { "name": "" },
+  { "name": "Odd phrase lengths" },
+  { "name": "Euclidean rhythms" },
+  { "name": "Additive rhythms" }
+]

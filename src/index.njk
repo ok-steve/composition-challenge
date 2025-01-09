@@ -9,31 +9,65 @@ eleventyComputed:
 
 <dl>
   <dt>Melody</dt>
-  <dd>{{ melody | pick }}</dd>
+  <dd>
+    {% set scale = scale|pick %}
+    {{ scale.name }} scale
+    {% if scale.description %}
+      <br>{{ scale.description }}
+    {% endif %}
+  </dd>
+  <dd>
+    {% set melody = melody|pick %}
+    {{ melody.name }}
+    {% if melody.description %}
+      <br>{{ melody.description }}
+    {% endif %}
+  </dd>
 
   <dt>Harmony</dt>
-  <dd>{{ scale | pick }}</dd>
-  <dd>{{ harmonicLanguage | pick }}</dd>
+  <dd>
+    {% set harmony =  harmonicLanguage | pick %}
+    {{ harmony.name }}
+    {% if harmony.description %}
+      <br>{{ harmony.description }}
+    {% endif %}
+  </dd>
 
   <dt>Rhythm</dt>
   <dd>{{ tempo | pick }} BPM</dd>
   <dd>{{ meter.numerator | pick }}/{{ meter.denominator | pick }}</dd>
 
-  {% set rhyFeat = rhythmicFeature | pick %}
+  {% set rhythm = rhythmicFeature | pick %}
 
-  {% if rhyFeat %}
-    <dd>{{ rhyFeat }}</dd>
+  {% if rhythm.name %}
+    <dd>
+      {{ rhythm.name }}
+      {% if rhythm.description %}
+        <br>{{ rhythm.description }}
+      {% endif %}
+    </dd>
   {% endif %}
 
   <dt>Form</dt>
   <dd>{{ form }}</dd>
 
-  {% set arrFeat = arrangementFeature | pick %}
+  {% set arrangement = arrangementFeature | pick %}
 
-  {% if arrFeat %}
-    <dd>{{ arrFeat }}</dd>
+  {% if arrangement.name %}
+    <dd>
+      {{ arrangement.name }}
+      {% if arrangement.description %}
+        <br>{{ arrangement.description }}
+      {% endif %}
+    </dd>
   {% endif %}
 
-  <dt>Texture</dt>
-  <dd>{{ textures | pick }}</dd>
+  {# <dt>Texture</dt>
+  <dd>
+    {% set texture = textures|pick %}
+    {{ texture.name }}
+    {% if texture.description %}
+      <br>{{ texture.description }}
+    {% endif %}
+  </dd> #}
 </dl>
