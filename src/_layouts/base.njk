@@ -19,12 +19,12 @@
     <link rel="stylesheet" href="/public/style.css" />
   </head>
   <body>
-    <div class="center cover">
+    <div class="center cover stack">
       <header role="banner">
         <a class="fz-3" href="/">{{ site.name }}</a>
       </header>
 
-      <main class="[ stack ] [ fx-auto ]" role="main">
+      <main class="cover-start stack" role="main">
         <h1>{{ title or site.name }}</h1>
 
         {{ content | safe }}
