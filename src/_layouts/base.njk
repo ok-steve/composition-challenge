@@ -12,26 +12,28 @@
     <link rel="canonical" href="{{ page.url | htmlBaseUrl(pkg.author.url) }}" />
     <link rel="alternate" type="application/atom+xml" title="{{ site.name }}" href="/feed.xml">
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
     <link rel="stylesheet" href="/public/style.css" />
   </head>
-  <body>
-    <div class="container cover stack">
-      <header role="banner">
-        <a href="/">{{ site.name }}</a>
-      </header>
+  <body class="container-fluid">
+    <header role="banner">
+      <a rel="home" href="/">{{ site.name }}</a>
+    </header>
 
-      <main class="[ stack ] [ flex-auto ]" role="main">
-        <h1>{{ title or site.name }}</h1>
+    <main role="main">
+      <h1>{{ title or site.name }}</h1>
 
-        {{ content | safe }}
+      {{ content | safe }}
 
-        <p><a href="feed.xml">Feed</a></p>
-      </main>
+      <p><a href="feed.xml">Feed</a></p>
+    </main>
 
-      <footer class="stack" role="contentinfo">
-        <p>A daily set of constraints to inspire your new musical composition. Inspired by <a href="https://whattocompose.com">What to Compose</a></p>
-        <p>Yet another <a href="{{ pkg.homepage }}">project</a> by <a href="{{ pkg.author.url }}">{{ pkg.author.name }}</a>.</p>
-      </footer>
-    </div>
+    <footer role="contentinfo">
+      <p>A daily set of constraints to inspire your new musical composition. Inspired by <a href="https://whattocompose.com">What to Compose</a>.</p>
+      <p>Yet another <a href="{{ pkg.homepage }}">project</a> by <a href="{{ pkg.author.url }}">{{ pkg.author.name }}</a>.</p>
+    </footer>
   </body>
 </html>
